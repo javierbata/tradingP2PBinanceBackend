@@ -1,5 +1,5 @@
 {
-  "name": "libro_notas_nodejs",
+  "name": "libro_notas_nodejs2",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -20,6 +20,7 @@
     "node-fetch": "^2.6.1",
     "path": "^0.12.7",
     "uuid": "^9.0.0",
+
     "winston": "^3.13.1"
   },
   "devDependencies": {

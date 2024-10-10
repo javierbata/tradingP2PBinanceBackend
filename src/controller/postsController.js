@@ -88,6 +88,27 @@ class postsController {
     }
   };
 
+  getPostsDate = async (req, res) => {
+    let pool;
+    try {
+      logger.info('Intentando obtener todos los posts.');
+      pool = await sql.connect(configBD);
+
+      const request = pool.request();
+      const query = `select * from Posts WHERE PostDate > '2024-09-24 00:00:00' and PostDate < '2024-09-24 00:05:00'`;
+
+      const result = await request.query(query);
+      res.status(200).json({ rescode: 200, mensaje: 'Consulta de posts realizada con éxito', result: result.recordset });
+    } catch (err) {
+      logger.error('Error al ejecutar consulta de posts:', err);
+      res.status(500).json({ rescode: 500, mensaje: 'Error al ejecutar consulta de posts', code: err.code });
+    } finally {
+      if (pool) {
+        await pool.close();
+      }
+    }
+  };
+
   // Obtener un post por ID
   getPostById = async (req, res) => {
     const { id } = req.query;

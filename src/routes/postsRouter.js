@@ -10,6 +10,12 @@ router.get("/", (req, res) => {
   postsController.getPosts(req, res)
 });
 
+router.get("/date", (req, res) => {
+  logger.info("Accessed /posts route");
+  postsController.getPostsDate(req, res)
+});
+
+
 router.post("/", (req, res) => {
   logger.info("Accessed POST /posts route");
   postsController.postPost(req, res)
