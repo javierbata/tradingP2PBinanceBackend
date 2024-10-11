@@ -95,7 +95,7 @@ class postsController {
       pool = await sql.connect(configBD);
 
       const request = pool.request();
-      const query = `select * from Posts WHERE PostDate > '2024-09-24 00:00:00' and PostDate < '2024-09-24 00:05:00'`;
+      const query = `select * from Posts where BankTypeId = 12 And PostDate > '2024-10-02'  and PostDate < '2024-10-11'`;
 
       const result = await request.query(query);
       res.status(200).json({ rescode: 200, mensaje: 'Consulta de posts realizada con éxito', result: result.recordset });
