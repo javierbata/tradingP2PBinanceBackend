@@ -70,7 +70,7 @@ class postsController {
   getPosts = async (req, res) => {
     let pool;
     try {
-      logger.info('Intentando obtener todos los posts.');
+      logger.info('Intentando obtener todos los posts.  ');
       pool = await sql.connect(configBD);
 
       const request = pool.request();
