@@ -59,4 +59,4 @@ jobs:
           app-name: 'tradingP2PBinanceBackend'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CF2F683889624BD6A977EACF54E7973F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3ADE504CD33B4BF8BF1A96ED790005F6 }}
